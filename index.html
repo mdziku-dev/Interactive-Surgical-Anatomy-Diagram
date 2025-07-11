@@ -34,7 +34,6 @@
   <h2>Interactive Surgical Anatomy Diagram</h2>
   <div class="diagram">
     <img src="https://via.placeholder.com/600x400?text=Anatomical+Diagram" alt="Anatomical Diagram">
-    <!-- Example tooltip positioned on the image -->
     <div class="tooltip" id="tooltip" style="left: 50%; top: 30%;">Surgical Landmark: Description here</div>
   </div>
 
@@ -42,9 +41,7 @@
     const tooltip = document.getElementById('tooltip');
     const diagram = document.querySelector('.diagram');
 
-    // Show/hide the tooltip when hovering over a key region (for demo, entire area is used)
     diagram.addEventListener('mousemove', (e) => {
-      // In a real example, you could check the coordinates for different regions
       tooltip.style.display = 'block';
       tooltip.style.left = e.offsetX + 'px';
       tooltip.style.top = (e.offsetY - 10) + 'px';
