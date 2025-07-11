@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Surgical Anatomy Diagram</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .diagram {
+      position: relative;
+      display: inline-block;
+    }
+    .diagram img {
+      max-width: 100%;
+      height: auto;
+    }
+    .tooltip {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      display: none;
+      pointer-events: none;
+      transform: translate(-50%, -100%);
+    }
+  </style>
+</head>
+<body>
+  <h2>Interactive Surgical Anatomy Diagram</h2>
+  <div class="diagram">
+    <img src="https://via.placeholder.com/600x400?text=Anatomical+Diagram" alt="Anatomical Diagram">
+    <!-- Example tooltip positioned on the image -->
+    <div class="tooltip" id="tooltip" style="left: 50%; top: 30%;">Surgical Landmark: Description here</div>
+  </div>
+
+  <script>
+    const tooltip = document.getElementById('tooltip');
+    const diagram = document.querySelector('.diagram');
+
+    // Show/hide the tooltip when hovering over a key region (for demo, entire area is used)
+    diagram.addEventListener('mousemove', (e) => {
+      // In a real example, you could check the coordinates for different regions
+      tooltip.style.display = 'block';
+      tooltip.style.left = e.offsetX + 'px';
+      tooltip.style.top = (e.offsetY - 10) + 'px';
+    });
+
+    diagram.addEventListener('mouseleave', () => {
+      tooltip.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
